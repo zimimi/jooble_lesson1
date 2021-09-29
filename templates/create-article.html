@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+    <title>Створити запис</title>
+</head>
+<body>
+<div class="container mt-4 col-md-5">
+<h1>Create post</h1>
+<a class="p-2 text-dark" href="/">Main page</a>
+<a class="p-2 text-dark" href="/posts">All posts</a>
+<a class="p-2 text-dark" href="/create-article">Create post</a>
+<a class="p-2 text-dark" href="/posts">Delete post</a>
+<a class="p-2 text-dark" href="/posts">Edit post</a>
+<a class="p-2 text-dark" href="/find_id">Find post by id</a>
+<a class="p-2 text-dark" href="/find_last">Find last n posts</a><br><br>
+
+    <form method="post">
+        <label for="title">Назва</label>
+        <input type="text" name="title" id="title" class="form-control" placeholder="Title"><br>
+        <p>Оберіть сторону шафи:</p>
+        <input type="radio" id="side" name="side" value="Left">
+        <label for="html">Left Side</label>
+        <input type="radio" id="side" name="side" value="Right">
+        <label for="html">Right Side</label><br><br>
+        <p>Оберіть колір полиці:</p>
+        <input type="radio" id="color" name="color" value="Yellow">
+        <label for="html">Yellow</label>
+        <input type="radio" id="color" name="color" value="Blue">
+        <label for="html">Blue</label>
+        <input type="radio" id="color" name="color" value="Red">
+        <label for="html">Red</label>
+        <input type="radio" id="color" name="color" value="Green">
+        <label for="html">Green</label><br><br>
+        <p>Чи це соло гра:</p>
+        <input type="radio" id="people" name="people" value="Yes">
+        <label for="html">Yes</label>
+        <input type="radio" id="people" name="people" value="No">
+        <label for="html">No</label><br><br>
+        <label for="type">Тип гри</label>
+        <input type="text" name="type" id="type" class="form-control" placeholder="Type of the game"><br>
+        <label for="Description">Опис гри</label>
+        <textarea name="description" id="description" class="form-control" placeholder="Description"></textarea><br>
+        <input type="submit" class="btn btn-success" value="Create">
+    </form>
+</div>
+</body>
+</html>
