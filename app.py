@@ -50,7 +50,7 @@ def find_last():
 def find_id():
     q = request.args.get('q')
     if q:
-        articles = Article.query.filter(Article.id.contains(q)).all()
+        articles = Article.query.filter(Article.id.contains(int(q)).all()
     else:
         articles = Article.query.limit(0)
     return render_template ("find_id.html", articles=articles)

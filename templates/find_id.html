@@ -20,22 +20,20 @@
 <a class="p-2 text-dark" href="/find_last">Find last n posts</a><br><br>
 
 
-    <form method="get">
-    <input type="number" name="q" class="form-control"  value="{{ request.args.get("q") }}" placeholder="Enter id number of post" min="1" max="10"><br>
-    </form>
+<form method="get">
+  <input type="number" name="q" class="form-control"  value="{{ request.args.get("q") }}" placeholder="Enter id number of post" min="1" max="10"><br>
+</form>
 
 
 
-    <!-- <h1>All posts</h1> -->
-    {% for el in articles %}
-    <div class="alert alert-info">
-        <h2>{{ el.title }}</h2>
-        <p>Номер запису: {{ el.id }}</p>
-        <p>{{ el.intro }}</p>
-        <p>Дата створення: {{ el.date.date() }}</p>
-        <a href="/posts/{{ el.id }}" class="btn btn-warning">Detail</a>
-    </div>
-    {% endfor %}
+{% for el in articles %}
+  <div class="alert alert-info">
+      <h2>{{ el.title }}</h2>
+      <p>Номер запису: {{ el.id }}</p>
+      <p>Дата створення: {{ el.date.date() }}</p>
+      <a href="/posts/{{ el.id }}" class="btn btn-warning">Detail</a>
+  </div>
+{% endfor %}
 </div>
 
 
