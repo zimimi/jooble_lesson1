@@ -1,36 +1,21 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
-    <title>{{ article.title }}</title>
-</head>
-<body>
-<div class="container mt-4 col-md-5">
-<h1>Назва гри: {{ article.title }}</h1>
-<a class="p-2 text-dark" href="/">Main page</a>
-<a class="p-2 text-dark" href="/posts">All posts</a>
-<a class="p-2 text-dark" href="/create-article">Create post</a>
-<a class="p-2 text-dark" href="/posts">Delete post</a>
-<a class="p-2 text-dark" href="/posts">Edit post</a>
-<a class="p-2 text-dark" href="/find_id">Find post by id</a>
-<a class="p-2 text-dark" href="/find_last">Find last n posts</a><br><br>
+{% extends 'base.html' %}
 
+{% block title %}{{ article.title }} - Детально{% endblock %}
 
-<div class="alert alert-info">
-    <p><b>Назва гри:</b><br> {{ article.title }}</p>
-    <p><b>Сторона шафи:</b><br> {{ article.side }}</p>
-    <p><b>Колір полиці:</b><br> {{ article.color }}</p>
-    <p><b>Тип гри:</b><br> {{ article.type }}</p>
-    <p><b>Соло гра:</b><br> {{ article.people }}</p>
-    <p><b>Опис гри:</b><br> {{ article.description }}</p>
+{% block h1 %}{{ article.title }} : Детально{% endblock %}
 
-    <a href="/posts/{{ article.id }}/delete" class="btn btn-danger">Delete</a>
-    <a href="/posts/{{ article.id }}/posts_update" class="btn btn-warning">Edit</a>
+{% block body %}
+
+<div class="alert alert-secondary">
+  <p><b>Назва гри:</b><br> {{ article.title }}</p>
+  <p><b>Сторона шафи:</b><br> {{ article.side }}</p>
+  <p><b>Колір полиці:</b><br> {{ article.color }}</p>
+  <p><b>Тип гри:</b><br> {{ article.type }}</p>
+  <p><b>Соло гра:</b><br> {{ article.people }}</p>
+  <p><b>Опис гри:</b><br> {{ article.description }}</p>
+
+  <a href="/posts/{{ article.id }}/delete" class="btn btn-danger">Delete</a>
+  <a href="/posts/{{ article.id }}/posts_update" class="btn btn-warning">Edit</a>
 </div>
-</div>
-</body>
-</html>
+
+{% endblock %}
